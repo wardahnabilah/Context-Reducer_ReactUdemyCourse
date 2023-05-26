@@ -1,0 +1,48 @@
+.card-cart {
+    padding: .625rem;
+    margin-inline: .625rem;
+    margin-bottom: 1.875rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px 0 hsla(0, 0%, 0%, 0.1), 0 1px 2px -1px hsla(0, 0%, 0%, 0.1);
+    border-radius: .375rem;
+}
+
+.cardcart-image {
+    width: 9.375rem;
+    height: 6.25rem;
+}
+
+.cardcart-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.cardcart-name {
+    width: 21.875rem;
+}
+
+.cardcart-price {
+    width: 6.25rem;
+}
+
+.button.cardcart-button {
+    width: 4.75rem;
+    padding-inline: .125rem;
+    padding-block: .25rem;
+    font: .875rem "Poppins", sans-serif;
+    background-color: hsl(0, 73%, 35%);
+}
+
+.button.cardcart-button:hover {
+    background-color: hsl(0, 70%, 25%);
+    cursor: pointer;
+}
+
+@media (max-width: 680px) {
+    .cardcart-image {
+        display: none;
+    }
+}
+
