@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react"
+import { createContext, useContext, useEffect, useReducer } from "react"
 import { cartReducer } from "../reducer/cartReducer"
 
 const CartContext = createContext()
@@ -21,6 +21,8 @@ export default function CartProvider({children}) {
         addProduct,
         removeProduct
     }
+
+    useEffect(()=>{updateTotal()}, [state.cartList])
     
     // Add product
     function addProduct(product) {
@@ -39,6 +41,20 @@ export default function CartProvider({children}) {
         dispatch({
             type: "REMOVE_FROM_CART",
             payload: {products: updatedCarts}
+        })
+
+    }
+
+    // Calculate total price
+    function updateTotal() {
+        let totalPrice = 0
+        state.cartList.map(product => {
+            totalPrice += product.price
+        })
+
+        dispatch({
+            type: "UPDATE_TOTAL",
+            payload: {totalPrice: totalPrice}
         })
     }
     
