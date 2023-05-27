@@ -1,7 +1,10 @@
+import { useCart } from "../context/CartContext";
 import "./Card.css";
 
 export function Card(props) {
-    const {name, price, image} = props.product
+    const {id, name, price, image} = props.product
+
+    const {addProduct} = useCart()
 
     return (
         <div className="card">
@@ -11,7 +14,7 @@ export function Card(props) {
             <p className="card-name">{name}</p>
             <div className="card-detail">
                 <p className="price">${price}</p>
-                <button className="button card">Add To Cart</button>
+                <button onClick={() => { addProduct(props.product) }} className="button card">Add To Cart</button>
             </div>
         </div>
     )
