@@ -48,3 +48,13 @@
     background-color: hsl(224 64% 33%);
     cursor: pointer;
 }
+
+.card-detail .button.remove {
+    margin: 0;
+    background-color: hsl(0, 73%, 35%);
+}
+
+.card-detail .button.remove:hover {
+    margin: 0;
+    background-color: hsl(0, 70%, 25%);
+}

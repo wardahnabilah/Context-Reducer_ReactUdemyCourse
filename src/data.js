@@ -30,7 +30,7 @@ export const products = [
         image: "/assets/images/1005.png"
     },
     {
-        id: 1,
+        id: 6,
         name: "ZEBRONICS Zeb-Thunder Wired",
         price: "29",
         image: "/assets/images/1006.png"
