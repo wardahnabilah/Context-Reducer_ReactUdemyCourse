@@ -3,13 +3,13 @@ import { cartReducer } from "../reducer/cartReducer"
 
 const CartContext = createContext()
 
+export function useCart() {
+    return useContext(CartContext)
+}
+
 const initialState = {
     cartList: [],
     total: 0
-}
-
-export function useCart() {
-    return useContext(CartContext)
 }
 
 export default function CartProvider({children}) {

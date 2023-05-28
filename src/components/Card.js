@@ -1,10 +1,22 @@
+import { useEffect, useState } from "react";
 import { useCart } from "../context/CartContext";
 import "./Card.css";
 
 export function Card(props) {
     const {id, name, price, image} = props.product
+    const {cartList, addProduct, removeProduct} = useCart()
+    const [isInCart, setIsInCart] = useState(false)
 
-    const {addProduct} = useCart()
+    useEffect(()=>{
+        const productExist = cartList.find(productInCart => productInCart.id === id)
+        
+        if(productExist) {
+            setIsInCart(true)
+        } else {
+            setIsInCart(false)
+        }
+    
+    }, [cartList])
 
     return (
         <div className="card">
@@ -14,7 +26,9 @@ export function Card(props) {
             <p className="card-name">{name}</p>
             <div className="card-detail">
                 <p className="price">${price}</p>
-                <button onClick={() => { addProduct(props.product) }} className="button card">Add To Cart</button>
+                {isInCart ? <button onClick={() => { removeProduct(props.product) }} className="button remove">Remove</button> :
+                            <button onClick={() => { addProduct(props.product) }} className="button">Add To Cart</button>
+                }
             </div>
         </div>
     )
