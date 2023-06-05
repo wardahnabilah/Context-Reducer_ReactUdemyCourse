@@ -1,7 +1,8 @@
 .header {
     padding: .75rem;
     margin-top: 0 !important;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid hsla(0, 0%, 63%, 0.25);
@@ -25,6 +26,7 @@
 
 .nav {
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -35,6 +37,7 @@
     font-size: 1.125rem;
     line-height: 1.75rem;
     color: hsl(0 0% 0%);
+    text-align: center;
 }
 
 .nav-link.active {
@@ -42,15 +45,25 @@
 }
 
 .cart-qty {
-    padding-right: .5rem;
+    padding-inline: 4rem;
     color: hsl(0 0% 0%);
     font-size: 1.125rem;
     font-weight: 600;
     line-height: 1.75rem;
+    text-align: right;
 }
 
 @media (max-width: 680px) {
-    .nav {
+    .header-logo .text {
         display: none;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
+
+    .cart-qty {
+        padding-inline: 0;
+        font-size: 1rem;
     }
 }
