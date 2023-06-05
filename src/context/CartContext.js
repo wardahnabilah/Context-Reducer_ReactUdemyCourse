@@ -22,6 +22,7 @@ export default function CartProvider({children}) {
         removeProduct
     }
 
+    // eslint-disable-next-line
     useEffect(()=>{updateTotal()}, [state.cartList])
     
     // Add product
@@ -49,7 +50,7 @@ export default function CartProvider({children}) {
     function updateTotal() {
         let totalPrice = 0
         state.cartList.map(product => {
-            totalPrice += product.price
+            return totalPrice += product.price
         })
 
         dispatch({

@@ -1,6 +1,5 @@
 import { CardCart } from "../components";
 import { useCart } from "../context/CartContext";
-import { products } from "../data";
 import { useDocTitle } from "../hooks/useDocTitle.";
 import "./Cart.css";
 

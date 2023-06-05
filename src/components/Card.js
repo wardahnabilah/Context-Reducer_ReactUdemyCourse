@@ -16,7 +16,7 @@ export function Card(props) {
             setIsInCart(false)
         }
     
-    }, [cartList])
+    }, [cartList, id])
 
     return (
         <div className="card">
