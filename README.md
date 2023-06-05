@@ -1,6 +1,6 @@
 # Shopping Cart using Context and Reducer ReactJS
 
-This shopping cart was built using **Context and Reducer ReactJS**. In this website you can add or remove items, and see the total price in cart page.
+This shopping cart was built using **Context and Reducer ReactJS** and **React Router**. In this website you can add or remove items, and see the total price in cart page.
 
 ## Features
 - Add items to the cart
